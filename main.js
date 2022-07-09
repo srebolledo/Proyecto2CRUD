@@ -1,0 +1,3 @@
+function recibirNombre(Nombre, Apellido) {
+    
+}
