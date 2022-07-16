@@ -13,24 +13,24 @@ const agregarProducto = () =>{
         descripcion: nombre.value,
         precio: price.value,
         stock: cantidad.value,
-
+        
     }
     arrayArticulos.push(producto)
-    llenarTabla()
+    guardarLS();
     
 }
 const guardarLS = () => {
     localStorage.setItem('products', JSON.stringify(arrayArticulos))
-
+    
     llenarTabla()
 }
 
 const llenarTabla = () =>{
     
     tabla1.innerHTML=''
-
-    //arrayArticulos = JSON.parse(localStorage.getItem('products'))
-
+    
+    arrayArticulos = JSON.parse(localStorage.getItem('products'))
+    
     if (arrayArticulos === null){
         arrayArticulos = []
     }else {
@@ -49,23 +49,19 @@ const llenarTabla = () =>{
                 </td>
             </tr>
             `
-    
         })
-        
     }
+}
 
-       
-    }
-    
-   
-    accionBtn()
 
+// Why here?
+accionBtn()
 
 function accionBtn(){
     let btnEditar = Array.from(document.getElementsByClassName('editar'))
     let btnTrash = Array.from(document.getElementsByClassName('trash'))
     
-  
+    
 }
 
 //console.log(btnEditar);
